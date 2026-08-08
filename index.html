@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce Agent Blazer</title>
+<meta name="description" content="Salesforce Agent Blazer — a student community turning Trailblazers into builders of intelligent agents. Explore our mission, events, team, and milestones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/theme.css">
+</head>
+<body>
+
+<header id="site-header">
+  <nav>
+    <div class="logo">
+      <div class="logo-mark">SB</div>
+      Agent Blazer
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#events" class="nav-link">Events</a></li>
+      <li><a href="#team" class="nav-link">Team</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="#join" class="nav-cta">Join Us</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-tag"><span class="dot"></span> Salesforce Trailblazer Community · Est. 2023</div>
+    <h1>We turn Trailblazers<br>into builders of <span class="grad">intelligent agents.</span></h1>
+    <p class="lede">Agent Blazer is a student-led Salesforce community for learners who want to go beyond certifications — building real Agentforce, Flow, and Apex solutions together.</p>
+    <div class="hero-actions">
+      <a href="#join" class="btn btn-primary">Become a Blazer →</a>
+      <a href="#events" class="btn btn-ghost">See upcoming events</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="num">420+</span><span class="lbl">Members</span></div>
+      <div><span class="num">36</span><span class="lbl">Events hosted</span></div>
+      <div><span class="num">180+</span><span class="lbl">Certifications earned</span></div>
+      <div><span class="num">12</span><span class="lbl">Industry partners</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">About Us</div>
+      <h2>Why we exist</h2>
+      <p>We believe the best way to learn the Salesforce ecosystem is by shipping real projects — not just collecting badges.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="icon">V</div>
+        <h3>Our Vision</h3>
+        <p>To build the largest peer-driven Salesforce talent pipeline on campus — where every member leaves job-ready, not just certification-ready, fluent in both classic admin/dev skills and the new generation of AI agents.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="icon">M</div>
+        <h3>Our Mission</h3>
+        <p>We run hands-on workshops, hackathons, and mentorship tracks across Admin, Developer, and Agentforce paths — pairing every beginner with a Blazer who's already walked the trail.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><div class="k">01 · LEARN</div><p>Structured Trailhead tracks with weekly accountability sessions.</p></div>
+      <div class="pillar reveal"><div class="k">02 · BUILD</div><p>Team hackathons solving real problems for campus & NGO partners.</p></div>
+      <div class="pillar reveal"><div class="k">03 · LAUNCH</div><p>Resume reviews, mock interviews, and referrals into the ecosystem.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section id="events">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Events</div>
+      <h2>What's on the trail</h2>
+      <p>From beginner workshops to full-day hackathons — replace these with your real event calendar.</p>
+    </div>
+    <div class="tabs reveal">
+      <button class="tab-btn active" data-tab="upcoming">Upcoming</button>
+      <button class="tab-btn" data-tab="past">Past</button>
+    </div>
+    <div class="event-panel active" id="upcoming">
+      <a href="/events/agentblazer-unveiling" class="event-card reveal" style="display:grid;">
+        <div class="event-date"><span class="d">12</span><span class="m">AUG</span></div>
+        <div class="event-info"><h4>Agentblazer Unveiling</h4><p>Talk by Santosh Rebello, Salesforce · Anugraha Hall, AB3 · 10:30 AM</p></div>
+        <div class="event-badge live">Registration open</div>
+      </a>
+      <div class="event-card reveal">
+        <div class="event-date"><span class="d">14</span><span class="m">AUG</span></div>
+        <div class="event-info"><h4>Agentforce 101: Build Your First Agent</h4><p>Hands-on workshop · Lab 3 · 4:00 PM</p></div>
+        <div class="event-badge live">Registration open</div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-date"><span class="d">02</span><span class="m">SEP</span></div>
+        <div class="event-info"><h4>Trailhead Sprint: Admin Superset</h4><p>Team challenge · Online · 6:00 PM</p></div>
+        <div class="event-badge">Coming soon</div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-date"><span class="d">21</span><span class="m">SEP</span></div>
+        <div class="event-info"><h4>CampusHack: Salesforce Edition</h4><p>24-hour hackathon · Auditorium</p></div>
+        <div class="event-badge">Coming soon</div>
+      </div>
+    </div>
+    <div class="event-panel" id="past">
+      <div class="event-card reveal">
+        <div class="event-date"><span class="d">18</span><span class="m">MAY</span></div>
+        <div class="event-info"><h4>Flow Automation Deep Dive</h4><p>Workshop · 60 attendees</p></div>
+        <div class="event-badge">Completed</div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-date"><span class="d">03</span><span class="m">APR</span></div>
+        <div class="event-info"><h4>Meet the Trailblazers: Alumni Panel</h4><p>Panel discussion · 90 attendees</p></div>
+        <div class="event-badge">Completed</div>
+      </div>
+      <div class="event-card reveal">
+        <div class="event-date"><span class="d">11</span><span class="m">FEB</span></div>
+        <div class="event-info"><h4>Winter Hack: Nonprofit Cloud</h4><p>Hackathon · 8 teams</p></div>
+        <div class="event-badge">Completed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="about" id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Team</div>
+      <h2>The people behind the trail</h2>
+      <p>Placeholder names & roles — swap in your real core team and faculty coordinators.</p>
+    </div>
+
+    <div class="team-group">
+      <h3>Core Team</h3>
+      <div class="team-grid">
+        <div class="team-card reveal"><div class="avatar">AS</div><div class="team-info"><h4>Aditi Sharma</h4><div class="role">President</div></div></div>
+        <div class="team-card reveal"><div class="avatar">RK</div><div class="team-info"><h4>Rohan Kapoor</h4><div class="role">Vice President</div></div></div>
+        <div class="team-card reveal"><div class="avatar">MP</div><div class="team-info"><h4>Meera Patel</h4><div class="role">Technical Lead</div></div></div>
+        <div class="team-card reveal"><div class="avatar">JV</div><div class="team-info"><h4>Jay Verma</h4><div class="role">Events Lead</div></div></div>
+      </div>
+    </div>
+
+    <div class="team-group">
+      <h3>Faculty Coordinators</h3>
+      <div class="team-grid">
+        <div class="team-card reveal"><div class="avatar">DR</div><div class="team-info"><h4>Dr. R. Iyer</h4><div class="role">Faculty Advisor</div></div></div>
+        <div class="team-card reveal"><div class="avatar">DS</div><div class="team-info"><h4>Dr. S. Nair</h4><div class="role">Faculty Coordinator</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+<section id="achievements">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Achievements</div>
+      <h2>Milestones on the trail</h2>
+      <p>A running log of what the community has built and earned together.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <span class="tl-num">2026</span>
+        <h4>Recognized as Top Campus Trailblazer Community</h4>
+        <p>Ranked among the top student communities regionally for Trailhead completions and live project delivery.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-num">2025</span>
+        <h4>200+ certifications earned by members</h4>
+        <p>Crossed 200 combined Salesforce certifications across Admin, Platform Developer, and AI Associate tracks.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-num">2024</span>
+        <h4>First hackathon partnership with local NGOs</h4>
+        <p>Delivered 3 nonprofit CRM solutions built entirely by student teams during a 24-hour hackathon.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-num">2023</span>
+        <h4>Club founded with 25 members</h4>
+        <p>Started as a small study group preparing for Salesforce Administrator certification.</p>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-box reveal"><div class="big">180+</div><div class="lbl">Certifications</div></div>
+      <div class="stat-box reveal"><div class="big">36</div><div class="lbl">Events hosted</div></div>
+      <div class="stat-box reveal"><div class="big">12</div><div class="lbl">Partner orgs</div></div>
+      <div class="stat-box reveal"><div class="big">3</div><div class="lbl">Years running</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOIN US ================= -->
+<section class="join" id="join">
+  <div class="wrap">
+    <div class="join-panel reveal">
+      <div class="join-copy">
+        <div class="eyebrow">Join Us</div>
+        <h2>Start your trail today</h2>
+        <p>No prior Salesforce experience needed — just curiosity. Pick a track and we'll pair you with a mentor.</p>
+        <ul class="join-list">
+          <li>Free access to all workshops & hackathons</li>
+          <li>1:1 mentorship from senior Blazers</li>
+          <li>Resume review + mock interview support</li>
+          <li>Certificate of participation for every event</li>
+        </ul>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('This is a placeholder form — connect it to Supabase or a form service to go live.');">
+        <div class="field">
+          <label for="jname">Full name</label>
+          <input type="text" id="jname" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="jemail">Email</label>
+          <input type="email" id="jemail" placeholder="you@college.edu" required>
+        </div>
+        <div class="field">
+          <label for="jtrack">Track you're interested in</label>
+          <select id="jtrack">
+            <option>Admin</option>
+            <option>Developer</option>
+            <option>Agentforce / AI</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center;margin-top:6px;">Submit application →</button>
+        <p class="form-note">Placeholder form — wire this to Supabase or Formspree when ready.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT / FAQ ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contact & FAQ</div>
+      <h2>Questions? We've got you.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-item">
+          <div class="ic">@</div>
+          <div><h4>Email</h4><p>agentblazer@yourcollege.edu</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ic">#</div>
+          <div><h4>Community</h4><p>Join our Slack / Discord — link in bio</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ic">@</div>
+          <div><h4>Location</h4><p>Room 214, Tech Block, Main Campus</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ic">@</div>
+          <div><h4>Meet times</h4><p>Every Thursday, 5:00–6:30 PM</p></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="faq-item">
+          <button class="faq-q">Do I need coding experience to join? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Not at all. We have an Admin track built specifically for no-code / low-code beginners, plus a Developer track if you want to go deeper into Apex and LWC.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is membership free? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Yes, all workshops, hackathons, and mentorship sessions are free for members.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How do I get certified? <span class="plus">+</span></button>
+          <div class="faq-a"><p>We run structured Trailhead study groups leading up to each certification window, with mock exams and peer accountability check-ins.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can I join mid-semester? <span class="plus">+</span></button>
+          <div class="faq-a"><p>Yes — we onboard new Blazers on a rolling basis. Fill out the Join Us form any time.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>© 2026 Salesforce Agent Blazer. All trails lead forward.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ---------- Sticky header ----------
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ---------- Mobile nav toggle ----------
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// ---------- Active nav link on scroll ----------
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 140;
+    if (window.scrollY >= top) current = sec.id;
+  });
+  navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+});
+
+// ---------- Scroll reveal ----------
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+// ---------- Event tabs ----------
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.event-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ---------- FAQ accordion ----------
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+    if (!isOpen) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+// ---------- Hero canvas: interactive node network ----------
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, nodes = [];
+  const mouse = { x: -9999, y: -9999 };
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize(){
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+  function initNodes(){
+    const count = Math.min(60, Math.floor((w*h)/22000));
+    nodes = Array.from({length: count}, () => ({
+      x: Math.random()*w, y: Math.random()*h,
+      vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35
+    }));
+  }
+  function step(){
+    ctx.clearRect(0,0,w,h);
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > w) n.vx *= -1;
+      if (n.y < 0 || n.y > h) n.vy *= -1;
+      const dx = n.x - mouse.x, dy = n.y - mouse.y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 120) { n.x += dx/dist*0.6; n.y += dy/dist*0.6; }
+    });
+    for (let i=0; i<nodes.length; i++){
+      for (let j=i+1; j<nodes.length; j++){
+        const a = nodes[i], b = nodes[j];
+        const d = Math.hypot(a.x-b.x, a.y-b.y);
+        if (d < 140){
+          ctx.strokeStyle = `rgba(47,139,255,${0.16*(1-d/140)})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+    }
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 1.8, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(0,224,184,0.85)';
+      ctx.fill();
+    });
+    if (!reduced) requestAnimationFrame(step);
+  }
+  window.addEventListener('resize', () => { resize(); initNodes(); });
+  canvas.addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+  });
+  canvas.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  resize(); initNodes();
+  if (reduced) { step(); } else { requestAnimationFrame(step); }
+})();
+</script>
+</body>
+</html>

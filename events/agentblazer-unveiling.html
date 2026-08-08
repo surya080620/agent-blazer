@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentblazer Unveiling — Salesforce Agent Blazer</title>
+<meta name="description" content="Agentblazer Unveiling — a talk with Santosh Rebello, Global Workforce Development Head at Salesforce, on AI-powered CRM. August 12, Anugraha Hall AB3.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/theme.css">
+<style>
+/* =========================================================
+   EVENT PAGE — ENHANCED STYLES  (scoped, no conflicts)
+   ========================================================= */
+
+/* ---------- countdown bar ---------- */
+.event-countdown-bar {
+  background: linear-gradient(90deg, rgba(47,139,255,0.12), rgba(0,224,184,0.10));
+  border-bottom: 1px solid var(--border);
+  padding: 11px 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--accent-2);
+  letter-spacing: 0.06em;
+  position: relative;
+  z-index: 99;
+}
+.event-countdown-bar .cdt-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cdt-sep { opacity: 0.3; }
+
+/* ---------- hero overrides ---------- */
+.event-hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding-top: 156px;
+  padding-bottom: 80px;
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% -10%, rgba(47,139,255,0.20), transparent 60%),
+    radial-gradient(ellipse 45% 40% at 10% 90%, rgba(0,224,184,0.12), transparent 55%),
+    radial-gradient(ellipse 35% 30% at 90% 80%, rgba(47,139,255,0.08), transparent 55%),
+    var(--bg);
+}
+
+/* grid mesh overlay */
+.event-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(140,170,220,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140,170,220,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.event-hero-solo {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.event-hero-solo .hero-tag {
+  margin: 0 auto 36px;
+  background: rgba(0,224,184,0.07);
+  border-color: rgba(0,224,184,0.30);
+}
+
+.event-hero-solo h1 {
+  font-size: clamp(44px, 7.5vw, 80px);
+  line-height: 1.03;
+  margin-bottom: 22px;
+  letter-spacing: -0.025em;
+}
+
+.event-hero-solo h1 .grad {
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.event-hero-solo .lede {
+  font-size: 18px;
+  color: var(--text-dim);
+  max-width: 580px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.event-hero-solo .hero-actions {
+  justify-content: center;
+  margin-bottom: 56px;
+  gap: 14px;
+}
+
+.event-hero-solo .event-quickfacts {
+  margin: 0 auto;
+  max-width: 560px;
+}
+
+/* ---------- breadcrumb ---------- */
+.breadcrumb-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+  padding: 7px 16px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: rgba(255,255,255,0.03);
+  transition: all 0.22s ease;
+}
+.breadcrumb-back:hover {
+  color: var(--accent-2);
+  border-color: var(--accent-2);
+  background: rgba(0,224,184,0.06);
+}
+
+/* ---------- section divider ---------- */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+  margin: 0;
+}
+
+/* ---------- expect section ---------- */
+.expect-section {
+  background: var(--bg-alt);
+  padding: 100px 0;
+}
+
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 30px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--grad-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.about-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.3);
+}
+.about-card:hover::before { opacity: 1; }
+
+.about-card .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(47,139,255,0.10);
+  border: 1px solid rgba(47,139,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  color: var(--accent-2);
+  font-size: 16px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.about-card h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.about-card p {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .expect-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- speaker section ---------- */
+.speaker-section {
+  background: var(--bg);
+  padding: 100px 0;
+}
+
+.speaker-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.speaker-photo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.speaker-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(47,139,255,0.45), transparent 55%),
+    var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--accent-2);
+  overflow: hidden;
+  box-shadow: 0 0 0 6px rgba(47,139,255,0.08), 0 0 0 12px rgba(47,139,255,0.04);
+  flex-shrink: 0;
+}
+
+.speaker-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.speaker-company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--accent-2);
+  border: 1px solid rgba(0,224,184,0.25);
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(0,224,184,0.07);
+  letter-spacing: 0.06em;
+}
+
+.speaker-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.speaker-detail h4 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.speaker-detail .role {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent-2);
+  margin-bottom: 22px;
+  letter-spacing: 0.04em;
+}
+
+.speaker-bio {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.7;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 700px) {
+  .speaker-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .speaker-photo-wrap { margin: 0 auto; }
+  .speaker-bio { text-align: left; }
+}
+
+/* ---------- register section ---------- */
+.register-section { background: var(--bg-alt); padding: 100px 0; }
+
+.register-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 72px 52px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.register-panel::before {
+  content: '';
+  position: absolute;
+  top: -40%; left: 50%;
+  transform: translateX(-50%);
+  width: 70%; height: 180%;
+  background: var(--grad-glow);
+  pointer-events: none;
+}
+
+.register-panel .eyebrow { justify-content: center; }
+.register-panel h2 {
+  font-size: 34px;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.register-panel p {
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.register-panel .btn {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  padding: 16px 38px;
+}
+
+/* ---------- queries section ---------- */
+.queries-section { background: var(--bg); padding: 100px 0; }
+
+.query-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) { .query-grid { grid-template-columns: 1fr; } }
+
+.query-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  transition: border-color 0.22s ease, transform 0.22s ease;
+}
+.query-item:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.query-item-left { display: flex; flex-direction: column; gap: 4px; }
+.query-item-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.query-item .role {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.query-item .num {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--accent-2);
+  background: rgba(0,224,184,0.08);
+  border: 1px solid rgba(0,224,184,0.18);
+  border-radius: 6px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+/* ---------- misc tweaks ---------- */
+.section-head { max-width: 640px; margin-bottom: 56px; }
+.section-head.centered { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head.centered .eyebrow { justify-content: center; }
+.section-head.centered .eyebrow::before { display: none; }
+</style>
+</head>
+<body>
+
+<!-- ================= COUNTDOWN ANNOUNCE BAR ================= -->
+<div class="event-countdown-bar">
+  <div class="cdt-inner">
+    <span>🗓 &nbsp;August 12, Tuesday · 10:30 AM</span>
+    <span class="cdt-sep">|</span>
+    <span>📍 Anugraha Hall, AB3</span>
+    <span class="cdt-sep">|</span>
+    <span id="countdown-text">Loading countdown…</span>
+  </div>
+</div>
+
+<header id="site-header" class="scrolled">
+  <nav>
+    <a href="/" class="logo">
+      <div class="logo-mark">SB</div>
+      Agent Blazer
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#home" class="nav-link">Home</a></li>
+      <li><a href="/#about" class="nav-link">About</a></li>
+      <li><a href="/#events" class="nav-link">Events</a></li>
+      <li><a href="/#team" class="nav-link">Team</a></li>
+      <li><a href="/#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="#register" class="nav-cta">Register →</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<!-- ================= EVENT HERO ================= -->
+<section class="event-hero" id="home">
+  <div class="wrap">
+    <a href="/#events" class="breadcrumb-back">← Back to all events</a>
+    <div class="event-hero-grid event-hero-solo reveal">
+      <div class="hero-tag"><span class="dot"></span> Dept. of CSE · Amrita School of Computing</div>
+      <h1>Agentblazer<br><span class="grad">Unveiling.</span></h1>
+      <p class="lede">The world's largest customer relationship management platform, up close — insights into Salesforce &amp; AI innovation, and where AI-powered CRM is headed next.</p>
+      <div class="hero-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYvxXIukorIAep5MuqPfLkAlqGgpVTXexvadI-o5ujjddEKw/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn btn-primary">Click to Register →</a>
+        <a href="#speaker" class="btn btn-ghost">Meet the speaker</a>
+      </div>
+      <div class="event-quickfacts">
+        <div><span class="k">Date</span><span class="v">Aug 12, Tue</span></div>
+        <div><span class="k">Time</span><span class="v">10:30–12:30 PM</span></div>
+        <div><span class="k">Venue</span><span class="v">Anugraha Hall, AB3</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================= WHAT TO EXPECT ================= -->
+<section class="expect-section">
+  <div class="wrap">
+    <div class="section-head centered reveal">
+      <div class="eyebrow">What to Expect</div>
+      <h2>Three things you'll walk away with</h2>
+    </div>
+    <div class="expect-grid">
+      <div class="about-card reveal">
+        <div class="icon">01</div>
+        <h3>Salesforce &amp; AI Innovation</h3>
+        <p>A first-hand look at how Salesforce is weaving AI into the world's largest CRM platform.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="icon">02</div>
+        <h3>The Future of AI-Powered CRM</h3>
+        <p>Where customer relationship management is headed as intelligent agents take on real work.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="icon">03</div>
+        <h3>Industry Perspectives</h3>
+        <p>Straight from Salesforce — grounded, practical perspective from someone building it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================= SPEAKER ================= -->
+<section class="speaker-section" id="speaker">
+  <div class="wrap">
+    <div class="section-head centered reveal">
+      <div class="eyebrow">Speaker</div>
+      <h2>Hear it straight from Salesforce</h2>
+    </div>
+    <div class="speaker-layout reveal">
+      <div class="speaker-photo-wrap">
+        <div class="speaker-avatar">
+          <img src="/assets/img/speaker-santosh-rebello.jpg" alt="Santosh Rebello" onerror="this.style.display='none';this.parentElement.innerHTML='SR';">
+        </div>
+        <div class="speaker-company-badge">● &nbsp;Salesforce</div>
+      </div>
+      <div class="speaker-detail">
+        <h4>Santosh Rebello</h4>
+        <div class="role">Global Workforce Development Head</div>
+        <p class="speaker-bio">A senior leader at Salesforce driving global workforce development strategy, Santosh brings rich insights on how AI is reshaping CRM, enterprise software, and the future of work — sharing directly from inside the world's leading CRM platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================= REGISTER ================= -->
+<section class="register-section" id="register">
+  <div class="wrap">
+    <div class="register-panel reveal">
+      <div class="eyebrow" style="justify-content:center;">Scan &amp; Secure Your Spot</div>
+      <h2>Seats are limited — register now</h2>
+      <p>Tap below to fill out the registration form. It takes less than a minute.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYvxXIukorIAep5MuqPfLkAlqGgpVTXexvadI-o5ujjddEKw/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn btn-primary">Click to Register →</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================= FOR QUERIES ================= -->
+<section class="queries-section">
+  <div class="wrap">
+    <div class="section-head centered reveal">
+      <div class="eyebrow">For Queries</div>
+      <h2>Have a question? Reach out.</h2>
+    </div>
+    <div class="query-grid reveal">
+      <div class="query-item">
+        <div class="query-item-left">
+          <div class="query-item-name">Sahana H</div>
+          <div class="role">Chairperson</div>
+        </div>
+        <div class="num">99897 02283</div>
+      </div>
+      <div class="query-item">
+        <div class="query-item-left">
+          <div class="query-item-name">Vineet Kashyap</div>
+          <div class="role">Vice Chairperson</div>
+        </div>
+        <div class="num">85919 37271</div>
+      </div>
+      <div class="query-item">
+        <div class="query-item-left">
+          <div class="query-item-name">Bhamini V</div>
+          <div class="role">Secretary</div>
+        </div>
+        <div class="num">83803 20052</div>
+      </div>
+      <div class="query-item">
+        <div class="query-item-left">
+          <div class="query-item-name">Dishitha V</div>
+          <div class="role">PR and Media Head</div>
+        </div>
+        <div class="num">85724 72379</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>Conducted by Dept. of Computer Science and Engineering, Amrita School of Computing, Coimbatore</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#events">All events</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- header ---------- */
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => { header.classList.toggle('scrolled', true); });
+
+/* ---------- mobile nav ---------- */
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* ---------- reveal on scroll ---------- */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+
+/* ---------- countdown ---------- */
+(function () {
+  const target = new Date('2026-08-12T10:30:00+05:30');
+  const el = document.getElementById('countdown-text');
+  function update() {
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) { el.textContent = '🎉 Event is happening now!'; return; }
+    const d = Math.floor(diff / 864e5);
+    const h = Math.floor((diff % 864e5) / 36e5);
+    const m = Math.floor((diff % 36e5) / 6e4);
+    const s = Math.floor((diff % 6e4) / 1e3);
+    el.textContent = `⏱ ${d}d ${h}h ${m}m ${s}s to go`;
+  }
+  update();
+  setInterval(update, 1000);
+})();
+</script>
+</body>
+</html>
